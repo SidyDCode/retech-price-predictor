@@ -47,7 +47,6 @@ class ExploratoryAnalysis:
     def plot_price_by_brand(self) -> Path:
         """Génère un graphique comparatif des prix moyens par marque avec barres d'écart-type."""
         fig, ax = plt.subplots(figsize=(9, 5))
-        # Utilisation conforme aux normes récentes de Seaborn (hue assigné, legend=False)
         sns.barplot(
             data=self.df,
             x="brand",
@@ -68,16 +67,42 @@ class ExploratoryAnalysis:
         plt.close(fig)
         return save_path
 
+    def plot_features_correlation(self) -> Path:
+        """Génère la matrice de corrélation thermique des variables numériques."""
+        numeric_cols = self.df.select_dtypes(include=["number"]).columns
+        corr = self.df[numeric_cols].corr()
+
+        fig, ax = plt.subplots(figsize=(8, 6))
+        sns.heatmap(
+            corr,
+            annot=True,
+            cmap="Blues",
+            fmt=".2f",
+            linewidths=0.5,
+            cbar=True,
+            ax=ax,
+        )
+        ax.set_title("Matrice de corrélation des variables numériques", fontsize=13, fontweight="bold")
+
+        save_path = self.output_dir / "features_correlation.png"
+        fig.tight_layout()
+        fig.savefig(save_path, dpi=300)
+        plt.close(fig)
+        return save_path
+
     def run_full_analysis(self) -> None:
-        """Exécute l'analyse statistique et génère les graphiques."""
+        """Exécute l'analyse statistique et génère l'ensemble des graphiques."""
         print("=== Indicateurs statistiques par marque ===")
         print(self.compute_summary_statistics())
 
         p1 = self.plot_price_distribution()
         p2 = self.plot_price_by_brand()
+        p3 = self.plot_features_correlation()
+
         print(f"\n-> Graphiques exportés dans : {self.output_dir}")
         print(f"   1. {p1.name}")
         print(f"   2. {p2.name}")
+        print(f"   3. {p3.name}")
 
 
 if __name__ == "__main__":

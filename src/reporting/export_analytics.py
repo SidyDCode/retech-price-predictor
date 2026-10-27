@@ -30,7 +30,7 @@ class AnalyticsExporter:
 
         # Export au format CSV standard UTF-8 avec séparateur point-virgule (adapté à Power BI France)
         self.output_path.parent.mkdir(parents=True, exist_ok=True)
-        df.to_csv(self.output_path, sep=";", index=False, encoding="utf-8")
+        df.to_csv(self.output_path, sep=";", index=False, encoding="utf-8-sig")
         return self.output_path
 
 
