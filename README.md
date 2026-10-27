@@ -2,11 +2,14 @@
 
 > Pipeline de données de bout en bout et API de Machine Learning pour l'estimation du prix de revente d'ordinateurs portables reconditionnés à destination d'associations solidaires.
 
-![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?logo=fastapi)
-![Scikit--Learn](https://img.shields.io/badge/Scikit--Learn-1.3+-orange?logo=scikitlearn)
-![Pytest](https://img.shields.io/badge/Tests-12%20passed-brightgreen?logo=pytest)
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
+[![Python](https://img.shields.io/badge/Python-3.14-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-2.0+-150458?style=flat&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![NumPy](https://img.shields.io/badge/NumPy-1.26+-013243?style=flat&logo=numpy&logoColor=white)](https://numpy.org/)
+[![Scikit--Learn](https://img.shields.io/badge/Scikit--Learn-1.3+-F7931E?style=flat&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Power BI](https://img.shields.io/badge/Power_BI-Analytics-F2C811?style=flat&logo=powerbi&logoColor=black)](https://powerbi.microsoft.com/)
+[![Tests](https://img.shields.io/badge/Tests-12%20passed-brightgreen?style=flat&logo=pytest&logoColor=white)](https://docs.pytest.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
 
